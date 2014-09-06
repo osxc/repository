@@ -1,0 +1,14 @@
+---
+- name: configuration
+  command: "{{ configure_cmd }}"
+  chdir: "{{ dest }}"
+  notify: build
+
+- name: build
+  command: "{{ build_cmd }}"
+  chdir: "{{ dest }}"
+  notify: installation
+
+- name: installation
+  command: "{{ install_cmd }}"
+  chdir: "{{ dest }}"

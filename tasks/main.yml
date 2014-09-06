@@ -1,0 +1,16 @@
+---
+- name: Clone the git repository
+  git: "repo={{ clone_url }} dest={{ dest }} version={{ version }}"
+  notify: configuration
+
+- name: Link the repo
+  file: "src='{{ dest }}/{{ item.src }}' dest={{ item.dest }} state=link"
+
+- name: Setup env variables in the common env
+  lineinfile: dest=/Users/{{ ansible_user_id }}/.common_env
+              regexp={{ env.regex }}
+              line={{ env.line }}
+              state=present
+              owner={{ ansible_user_id }}
+  with_items: env
+

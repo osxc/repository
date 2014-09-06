@@ -1,6 +1,6 @@
 ---
+version: HEAD
 links: []
-copies: []
 env: []
 build: false
 configure_cmd: "./configure"

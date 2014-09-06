@@ -8,6 +8,7 @@ Checkout a git repository and compile it or link it
 ## Requirements
 
 - XCode Command-Line Tools (needs `git` and the build tools)
+- Sudo permissions for installing the build
 
 > **Note:** This role is generic enough to be used from a Linux distribution if you've got `git` and the build tools installed.
 
@@ -17,8 +18,8 @@ Checkout a git repository and compile it or link it
 |-----------------------|--------------------------------------------------|--------------------|
 | `clone_url`           | Where to clone from ?                            | none, required     |
 | `dest`                | Destination path (locally)                       | none, required     |
+| `version`             | The version to checkout                          | `HEAD`             |
 | `links`               | Array of dicts to create symbolic links: `{src: "relative/to/the/root/of/the/git/repo", dest: "/relative/to/root or ~/your/home"}` | `[]` |
-| `copies`              | Array of dicts to copy files from: `{src: "relative/to/the/root/of/the/git/repo", dest: "/relative/to/root or ~/your/home"}` | `[]` |
 | `env`                 | Array of dicts to inject env: `{regex: "^export VAR_NAME", line: "export VAR_NAME='value'"}` | `[]` |
 | `build`               | Do you want to build this repo ?                 | `false`            |
 | `configure_cmd`       | The build configuration command                  | `./configure`      |
