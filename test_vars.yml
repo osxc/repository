@@ -4,7 +4,7 @@ clone_url: https://github.com/ggreer/the_silver_searcher.git
 dest: /Users/{{ ansible_user_id }}/ag
 links:
 - src: .gitignore
-  dest: /Users/{{ ansible_user_id/.ag_gitignore
+  dest: /Users/{{ ansible_user_id }}/.ag_gitignore
 env:
 - regex: "^export BOB"
   line: "export BOB=bobby"
