@@ -1,14 +1,15 @@
 ---
-- name: configuration
+- name: configure build
   command: "{{ configure_cmd }}"
   chdir: "{{ dest }}"
-  notify: build
+  notify: do build
+  when: build
 
-- name: build
+- name: do build
   command: "{{ build_cmd }}"
   chdir: "{{ dest }}"
-  notify: installation
+  notify: install build
 
-- name: installation
+- name: install build
   command: "{{ install_cmd }}"
   chdir: "{{ dest }}"
