@@ -4,7 +4,7 @@ before_install:
 - sudo easy_install pip
 install:
 - sudo pip install ansible
-- brew install automake pkg-config pcre
+- brew install automake pkg-config pcre xz
 script:
 - echo localhost > inventory
 - ansible-playbook --syntax-check -i inventory test.yml
