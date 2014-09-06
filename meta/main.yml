@@ -1,0 +1,19 @@
+
+---
+galaxy_info:
+  author: Robin Ricard
+  description: Checkout a git repository and compile it or link it
+  company: osxc
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: MacOSX
+    versions:
+    - 10.9
+    - 10.10
+  categories:
+  - development
+  - packaging
+  - system
+dependencies:
+- osxc.common-env
