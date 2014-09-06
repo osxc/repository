@@ -1,7 +1,7 @@
 ---
 - name: Clone the git repository
   git: "repo={{ clone_url }} dest={{ dest }} version={{ version }} accept_hostkey=yes"
-  notify: configuration
+  notify: configure build
 
 - name: Link the repo
   file: "src='{{ dest }}/{{ item.src }}' dest={{ item.dest }} state=link"
