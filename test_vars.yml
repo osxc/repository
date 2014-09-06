@@ -1,6 +1,6 @@
 ---
 version: HEAD
-clone_url: git@github.com:ggreer/the_silver_searcher.git
+clone_url: https://github.com/ggreer/the_silver_searcher.git
 dest: /Users/{{ ansible_user_id }}/ag
 links:
 - src: .gitignore
