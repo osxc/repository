@@ -4,5 +4,6 @@
   handlers:
   - include: handlers/main.yml
   tasks:
+  - file: dest=/Users/{{ ansible_user_id }}/.common_env state=touch
   - include_vars: test_vars.yml
   - include: tasks/main.yml
