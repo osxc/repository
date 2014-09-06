@@ -4,7 +4,7 @@
   notify: configure build
 
 - name: Link the repo
-  file: "src={{ dest }}/{{ item.src }} dest={{ item.dest }} state=link"
+  file: "src={{ dest + '/' + item.src }} dest={{ item.dest }} state=link"
   with_items: links
 
 - name: Setup env variables in the common env
