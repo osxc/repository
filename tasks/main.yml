@@ -9,8 +9,8 @@
 
 - name: Setup env variables in the common env
   lineinfile: dest=/Users/{{ ansible_user_id }}/.common_env
-              regexp={{ env.regex }}
-              line={{ env.line }}
+              regexp={{ item.regex }}
+              line={{ item.line }}
               state=present
               owner={{ ansible_user_id }}
   with_items: env
