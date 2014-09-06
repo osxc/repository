@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   remote_user: root
+  handlers:
+  - include: handlers/main.yml
   tasks:
   - include_vars: test_vars.yml
   - include: tasks/main.yml

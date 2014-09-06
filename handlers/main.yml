@@ -11,5 +11,6 @@
   notify: install build
 
 - name: install build
+  sudo: yes
   command: "{{ install_cmd }}"
   chdir: "{{ dest }}"
