@@ -1,16 +1,13 @@
 ---
 - name: configure build
-  command: "{{ configure_cmd }}"
-  chdir: "{{ dest }}"
+  command: "{{ configure_cmd }} chdir={{ dest }}"
   notify: do build
   when: build
 
 - name: do build
-  command: "{{ build_cmd }}"
-  chdir: "{{ dest }}"
+  command: "{{ build_cmd }} chdir={{ dest }}"
   notify: install build
 
 - name: install build
   sudo: yes
-  command: "{{ install_cmd }}"
-  chdir: "{{ dest }}"
+  command: "{{ install_cmd }} chdir={{ dest }}"
